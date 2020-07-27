@@ -1,0 +1,66 @@
+.avatarComp {
+
+    max-width: 450px;
+
+
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+}
+
+.avatarDatas {
+    width: 80%;
+}
+
+.avatarImg{
+    width: 135px;
+    height: 135px;
+    margin-right: 2em;
+    border-radius: 100%;
+    background-color: aliceblue;
+    box-shadow: 0px 3px 6px rgba(1, 1, 1, 0.15);
+    background-image: url('../../assets/avatar.png');
+    background-position: center center;
+}
+
+.avatarIGDatas {
+    display: flex;
+    margin-bottom: .5em;
+}
+
+.avatarIGDatas div {margin-right: 1.5em;}
+
+.igName, .igLocation {
+    display: flex;
+    align-items: center;
+}
+
+.igName p, .igLocation p { margin-right: .3em; font-weight: 500;}
+
+.igName {color: #00CFFC;}
+.igLocation {color: #B0B6BB;}
+
+.avatarInterest {
+    list-style: none;
+    display: flex;
+    color: #B0B6BB;
+    flex-wrap: wrap;
+    margin-top: 1.5em;
+
+
+}
+
+.avatarInterest li {
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-right: .5em;
+    margin-bottom: .5em;
+    padding: 0.3em 1em 0.3em 1em;
+    background-color: #606D77;
+    border-radius: 5em;
+}
+
+

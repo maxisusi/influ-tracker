@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Neue Haas Grotesk ';
+    src: local('Neue Haas Grotesk  Thin'), local('Neue-Haas-Grotesk--Thin'),
+        url('NeueHaasDisplay-Thin.woff2') format('woff2'),
+        url('NeueHaasDisplay-Thin.woff') format('woff'),
+        url('NeueHaasDisplay-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }
