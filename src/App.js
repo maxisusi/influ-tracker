@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MainBoard, Audience } from './components';
+import { MainBoard } from './components';
 
 function App() {
   return (
