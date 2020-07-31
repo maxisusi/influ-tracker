@@ -5,7 +5,10 @@ import { MainBoard } from './components';
 function App() {
   return (
     <div className="App">
-      <MainBoard />
+      <div className="board">
+        <MainBoard />
+      </div>
+
 
     </div>
   );

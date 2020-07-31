@@ -17,6 +17,15 @@ p, li {
 
 h1 { font-family: 'ITC Avant Garde Gothic Pro' }
 
+.board {
+  max-width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #3A5060;
+  padding: 1em;
+  box-shadow: 0px 3px 6px rgba(1, 1, 1, 0.15);
+}
+
 @font-face {
   font-family: 'ITC Avant Garde Gothic Pro';
   src: url('./fonts/ITCAvantGardeStd-Bold/ITCAvantGardeStd-Bold.ttf');
@@ -34,3 +43,14 @@ h1 { font-family: 'ITC Avant Garde Gothic Pro' }
   src: url('./fonts/NeueHaasDisplay-Thin/NeueHaasDisplay-Thin.ttf');
   font-weight: 200;
 }
+
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  font-weight: 400;
+  src: url('./fonts/NeueHaasDisplay-Mediu.eot');
+  src: url('./fonts/NeueHaasDisplay-Mediu.eot?#iefix') format('embedded-opentype'),
+  url('./fonts/NeueHaasDisplay-Mediu.woff') format('woff'),
+  url('./fonts/NeueHaasDisplay-Mediu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
