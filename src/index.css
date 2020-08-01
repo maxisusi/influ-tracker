@@ -18,11 +18,11 @@ p, li {
 h1 { font-family: 'ITC Avant Garde Gothic Pro' }
 
 .board {
-  max-width: 1000px;
+  max-width: 1450px;
   height: 100vh;
   margin: 0 auto;
   background-color: #3A5060;
-  padding: 1em;
+  padding: .5em;
   box-shadow: 0px 3px 6px rgba(1, 1, 1, 0.15);
 }
 

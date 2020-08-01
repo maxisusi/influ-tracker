@@ -1,12 +1,10 @@
 import React from 'react';
-import styles from './MainBoard.module.css';
+import styles from '../MainBoard.module.css';
 
 const Stats = ({ avatarStats }) => {
 
     const followersCount = avatarStats.audienceStatistics.followers;
     const engagementRate = avatarStats.generalStatistics.engagementRate;
-
-    console.log(engagementRate);
 
     var SI_SYMBOL = ["", "k", "M", "G", "T", "P", "E"];
 
