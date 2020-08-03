@@ -1,22 +1,19 @@
 .mainBoardElement {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .avatarComp {
     max-width: 100%;
     display: flex;
     align-items: center;
-
 }
 
 .avatar {
     display: flex;
     align-items: center;
     width: 60%;
-
 }
 
 .avatarImg{
@@ -32,7 +29,6 @@
 .avatarIGDatas {
     display: flex;
     margin-bottom: .5em;
-
 }
 
 .avatarIGDatas div {margin-right: 1.5em;}
@@ -48,7 +44,6 @@
 .igLocation {color: #B0B6BB;}
 
 .avatarInterest {
-
     width: 90%;
     list-style: none;
     display: flex;
@@ -75,20 +70,18 @@
 }
 
 .statsContainer {
-
     display: flex;
-
 }
 
 .statsElems:first-child {
     margin-right: 2.5em;
 }
 
+.scoreElem {list-style: none;}
+
 .statsElems p {
     font-weight: 500;
     color: #B0B6BB;
-   
-
 }
 
 .statsElems h2 {
@@ -96,4 +89,32 @@
     font-weight: 500;
 }
 
+.scoreBoard {
+    margin-top: 4em;
+}
 
+.scoreWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 470px;
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    border-bottom: 1px solid #606D77;
+}
+
+.scoreSubTitle {
+    color: #00CFFC;
+}
+
+.scoreResult {
+    font-size: 2rem;
+}
+
+.scoreInfo {
+    display: flex;
+    align-items: center;
+}
+.scoreTitleWrapper {
+    margin-left: 1.5em;
+}
