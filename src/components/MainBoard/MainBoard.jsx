@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Avatar from './features/Avatar';
-import Stats from './features/Stats';
-import ScoreBoard from './features/Scoreboard';
+
+import { Avatar, Stats, RealEngagement, Scoreboard } from './features';
 import axios from 'axios';
 import styles from './MainBoard.module.css';
 
 const MainBoard = () => {
 
-    const API_KEY = 'https://app.influenceye.com/api/v1/profile/findByUsername?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&network=instagram&username=cristiano'
+    const API_KEY = 'https://app.influenceye.com/api/v1/profile/findByUsername?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&network=instagram&username=kimkardashian'
     const [avatar, setAvatar] = useState(null);
 
     useEffect(() => {
@@ -25,16 +24,17 @@ const MainBoard = () => {
                     <Stats avatarStats={avatar} />
 
                 </div>
-                <div>
-                    <ScoreBoard scoring={avatar} />
+                <div className={styles.mainBoardElement2Row}>
+                    <Scoreboard scoring={avatar} />
+                    <RealEngagement engagement={avatar} />
                 </div>
             </div>
         )
-    } 
+    }
 
     else {
-    return (<div>Loading MainBoard...</div>)
-}
+        return (<div>Loading MainBoard...</div>)
+    }
 
 
 };

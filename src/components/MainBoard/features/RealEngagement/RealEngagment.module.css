@@ -1,0 +1,26 @@
+.engagementWrapper {
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+}
+
+.engagementBlock {
+    padding: 6.5em;
+    border: 1px solid #606D77;
+
+    height: 100%;
+}
+
+.engagementBlock:first-child {
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+}
+.engagementBlock:last-child {
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+
+.smallText {
+    font-size: 1rem;
+    color: #B0B6BB;
+}

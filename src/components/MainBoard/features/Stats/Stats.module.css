@@ -1,0 +1,15 @@
+
+.statsContainer {
+    display: flex;
+    font-size: 20px;
+}
+
+.statsElems:first-child {
+    margin-right: 2.5em;
+}
+
+.statsElems p {
+    color: #B0B6BB;
+    font-weight: 400;
+}
+

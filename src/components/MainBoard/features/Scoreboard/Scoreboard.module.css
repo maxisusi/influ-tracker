@@ -1,0 +1,44 @@
+.scoreElem {list-style: none;}
+
+.statsElems p {
+    font-weight: 500;
+    color: #B0B6BB;
+}
+
+.statsElems h2 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+
+.scoreWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 470px;
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    border-bottom: 1px solid #606D77;
+}
+
+.scoreSubTitle {
+    color: #00CFFC;
+}
+
+.scoreResult {
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.scoreInfo {
+    display: flex;
+    align-items: center;
+}
+.scoreTitleWrapper {
+    margin-left: 1.5em;
+}
+
+.thinScore {
+    
+    font-weight: 400;
+}
