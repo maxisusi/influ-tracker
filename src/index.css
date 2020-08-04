@@ -13,6 +13,7 @@ body {
 p, li {
   font-weight: 100;
 
+
 }
 
 h1 { font-family: 'ITC Avant Garde Gothic Pro' }
@@ -24,6 +25,10 @@ h1 { font-family: 'ITC Avant Garde Gothic Pro' }
 
   padding: .5em;
 
+}
+
+.MainTitle {
+  font-style: 3rem;
 }
 
 @font-face {
@@ -42,6 +47,7 @@ h1 { font-family: 'ITC Avant Garde Gothic Pro' }
   font-family: 'Neue Haas Grotesk';
   src: url('./fonts/NeueHaasDisplay-Thin/NeueHaasDisplay-Thin.ttf');
   font-weight: 200;
+
 }
 
 @font-face {

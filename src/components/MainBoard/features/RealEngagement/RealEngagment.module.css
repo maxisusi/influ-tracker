@@ -1,14 +1,17 @@
 .engagementWrapper {
     display: flex;
     width: 100%;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .engagementBlock {
-    padding: 6.5em;
+    padding: 6em;
     border: 1px solid #606D77;
-
     height: 100%;
+
+}
+.engagementBlock h2 {
+    letter-spacing: 0.02em;
 }
 
 .engagementBlock:first-child {
@@ -23,4 +26,5 @@
 .smallText {
     font-size: 1rem;
     color: #B0B6BB;
+    letter-spacing: 0.03em;
 }
