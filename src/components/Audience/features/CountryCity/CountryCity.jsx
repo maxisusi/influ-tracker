@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HorizontalBar } from 'react-chartjs-2';
 import styles from './CountryCity.module.css';
-
 
 import { defaults } from 'react-chartjs-2';
 import merge from 'lodash.merge';
 
-const CountryCity = () => {
+const CountryCity = ({ countryCity }) => {
 
+
+
+    const dataLabels = [];
+    const dataStats = [];
+
+    for (let i = 0; i < 5; i++) {
+        dataLabels.push(countryCity.audienceStatistics.countries[i].showName);
+        dataStats.push(countryCity.audienceStatistics.countries[i].count);
+    }
 
 
     merge(defaults, {
@@ -16,23 +24,17 @@ const CountryCity = () => {
             defaultFontStyle: '500',
 
             legend: {
-                display: false
+                display: false,
             }
         },
     });
 
 
     const data = {
-        labels: ['Iran', 'Spain', 'Italy', 'Brazil', 'Indonesia'],
+        labels: dataLabels,
         datasets: [{
             label: 'People',
-            data: [
-                5885,
-                6125,
-                4910,
-                3504,
-                2831,
-            ],
+            data: dataStats,
             borderWidth: 1.6,
             borderColor: [
                 '#00CFFC',
@@ -51,6 +53,8 @@ const CountryCity = () => {
 
         }]
     }
+
+
     return (
         <>
             <div className={styles.chart}>
@@ -98,6 +102,9 @@ const CountryCity = () => {
             </div>
         </>
     )
+
 }
+
+
 
 export default CountryCity;
