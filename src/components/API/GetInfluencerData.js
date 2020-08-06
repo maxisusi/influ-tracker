@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 const GetInfluencerData = () => {
@@ -8,9 +8,9 @@ const GetInfluencerData = () => {
 
     useEffect(() => {
         axios.get(API_KEY)
-            .then(response => {
-                setAvatar(response.data);
-            })
+            .then(response =>
+                setAvatar(response.data))
+
             .catch(error => console.log(error))
     }, [API_KEY])
 

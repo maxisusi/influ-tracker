@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { HorizontalBar } from 'react-chartjs-2';
 import styles from './CountryCity.module.css';
 
@@ -7,15 +7,45 @@ import merge from 'lodash.merge';
 
 const CountryCity = ({ countryCity }) => {
 
+    const dataFromAPI = countryCity;
+    const [dataSet, setDataSet] = useState({
+        dataLabel: null,
+        dataElem: null,
+    });
 
+    const [menu, setMenu] = useState('country');
+    
+    useEffect(() => {
 
-    const dataLabels = [];
-    const dataStats = [];
+        const countryLabel = [];
+        const countryData = [];
 
-    for (let i = 0; i < 5; i++) {
-        dataLabels.push(countryCity.audienceStatistics.countries[i].showName);
-        dataStats.push(countryCity.audienceStatistics.countries[i].count);
-    }
+        if (menu == 'country') {
+
+            for (let i = 0; i < 5; i++) {
+                countryLabel.push(dataFromAPI.audienceStatistics.countries[i].showName);
+                countryData.push(dataFromAPI.audienceStatistics.countries[i].count);
+
+            }
+        }
+
+        else {
+            for (let i = 0; i < 5; i++) {
+                countryLabel.push(dataFromAPI.audienceStatistics.topCities[i].showName);
+                countryData.push(dataFromAPI.audienceStatistics.topCities[i].count);
+
+            }
+        }
+
+        setDataSet({
+            dataLabel: countryLabel,
+            dataElem: countryData,
+
+        })
+
+    }, [menu])
+
+    console.log(dataSet)
 
 
     merge(defaults, {
@@ -29,12 +59,11 @@ const CountryCity = ({ countryCity }) => {
         },
     });
 
-
     const data = {
-        labels: dataLabels,
+        labels: dataSet.dataLabel,
         datasets: [{
             label: 'People',
-            data: dataStats,
+            data: dataSet.dataElem,
             borderWidth: 1.6,
             borderColor: [
                 '#00CFFC',
@@ -57,6 +86,10 @@ const CountryCity = ({ countryCity }) => {
 
     return (
         <>
+            <div>
+                <p>Country</p>
+                <p>City</p>
+            </div>
             <div className={styles.chart}>
                 <HorizontalBar
                     data={data}
