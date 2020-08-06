@@ -7,13 +7,12 @@ import merge from 'lodash.merge';
 
 const CountryCity = ({ countryCity }) => {
 
-    const dataFromAPI = countryCity;
     const [dataSet, setDataSet] = useState({
         dataLabel: null,
         dataElem: null,
     });
 
-    const [menu, setMenu] = useState('country');
+    let [menu, setMenu] = useState('country');
     
     useEffect(() => {
 
@@ -23,16 +22,16 @@ const CountryCity = ({ countryCity }) => {
         if (menu == 'country') {
 
             for (let i = 0; i < 5; i++) {
-                countryLabel.push(dataFromAPI.audienceStatistics.countries[i].showName);
-                countryData.push(dataFromAPI.audienceStatistics.countries[i].count);
+                countryLabel.push(countryCity.audienceStatistics.countries[i].showName);
+                countryData.push(countryCity.audienceStatistics.countries[i].count);
 
             }
         }
 
         else {
             for (let i = 0; i < 5; i++) {
-                countryLabel.push(dataFromAPI.audienceStatistics.topCities[i].showName);
-                countryData.push(dataFromAPI.audienceStatistics.topCities[i].count);
+                countryLabel.push(countryCity.audienceStatistics.topCities[i].showName);
+                countryData.push(countryCity.audienceStatistics.topCities[i].count);
 
             }
         }
@@ -45,7 +44,7 @@ const CountryCity = ({ countryCity }) => {
 
     }, [menu])
 
-    console.log(dataSet)
+
 
 
     merge(defaults, {
@@ -86,9 +85,9 @@ const CountryCity = ({ countryCity }) => {
 
     return (
         <>
-            <div>
-                <p>Country</p>
-                <p>City</p>
+            <div className={styles.chartMenu}>
+                <p onClick={() => setMenu('country')}>Country</p>
+                <p onClick={() => setMenu('city')}>City</p>
             </div>
             <div className={styles.chart}>
                 <HorizontalBar
