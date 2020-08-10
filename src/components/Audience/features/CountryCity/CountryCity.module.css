@@ -1,11 +1,14 @@
 .chart {
+    width: 100%;
+}
+
+.chartWrapper { 
     width: 50%;
 }
 
 .chartMenu {
     display: flex;
     font-size: 1.5em;
-    font-weight: 500;
     margin-bottom: 1.5em;
     cursor: pointer;
 

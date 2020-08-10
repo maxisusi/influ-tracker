@@ -12,14 +12,14 @@ const CountryCity = ({ countryCity }) => {
         dataElem: null,
     });
 
-    let [menu, setMenu] = useState('country');
+    const [menu, setMenu] = useState('country');
     
     useEffect(() => {
 
         const countryLabel = [];
         const countryData = [];
 
-        if (menu == 'country') {
+        if (menu === 'country') {
 
             for (let i = 0; i < 5; i++) {
                 countryLabel.push(countryCity.audienceStatistics.countries[i].showName);
@@ -28,7 +28,7 @@ const CountryCity = ({ countryCity }) => {
             }
         }
 
-        else {
+        else if (menu === 'city'){
             for (let i = 0; i < 5; i++) {
                 countryLabel.push(countryCity.audienceStatistics.topCities[i].showName);
                 countryData.push(countryCity.audienceStatistics.topCities[i].count);
@@ -52,9 +52,7 @@ const CountryCity = ({ countryCity }) => {
             defaultFontFamily: "Neue Haas Grotesk",
             defaultFontStyle: '500',
 
-            legend: {
-                display: false,
-            }
+
         },
     });
 
@@ -84,16 +82,16 @@ const CountryCity = ({ countryCity }) => {
 
 
     return (
-        <>
+        <div className={styles.chartWrapper}>
             <div className={styles.chartMenu}>
-                <p onClick={() => setMenu('country')}>Country</p>
-                <p onClick={() => setMenu('city')}>City</p>
+                <p onClick={() => setMenu('country')} style={{ color: menu === 'country' ? '#00CFFC' : '#B0B6BB' }}>Country</p>
+                <p onClick={() => setMenu('city')}style={{ color: menu === 'city' ? '#00CFFC' : '#B0B6BB' }}>City</p>
             </div>
             <div className={styles.chart}>
                 <HorizontalBar
                     data={data}
-                    width={300}
-                    height={90}
+                    width={200}
+                    height={60}
                     options=
                     {{
                         maintainAspectRatio: true,
@@ -102,6 +100,17 @@ const CountryCity = ({ countryCity }) => {
                             bodyFontSize: 15,
                             bodySpacing: 2
                         },
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            fontColor: 'white',
+
+                            labels: {
+                                fontColor: 'white',
+                                fontSize: 14
+                            }
+                        },
+
                         scales: {
                             yAxes: [{
                                 gridLines: {
@@ -132,7 +141,7 @@ const CountryCity = ({ countryCity }) => {
                     }}
                 />
             </div>
-        </>
+        </div>
     )
 
 }

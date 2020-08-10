@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountryCity } from './features'
+import { CountryCity, AudienceType } from './features'
 import styles from './Audience.module.css';
 
 
@@ -9,12 +9,16 @@ const Audience = ({ audience }) => {
         return (
             <>
                 <h1 className={styles.MainTitle}>Audience</h1>
-                <CountryCity countryCity={audience} />
+                <div className={styles.audienceModuleFirstRow}>
+
+                    <CountryCity countryCity={audience} />
+                    <AudienceType audienceInfo={audience} />
+                </div>
             </>
         )
     }
-    
-    else{
+
+    else {
         return (<div>Loading the Audience</div>)
     }
 }
