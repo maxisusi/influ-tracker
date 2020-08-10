@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountryCity, AudienceType } from './features'
+import { CountryCity, AudienceType, AudiencePersonnal } from './features'
 import styles from './Audience.module.css';
 
 
@@ -13,6 +13,9 @@ const Audience = ({ audience }) => {
 
                     <CountryCity countryCity={audience} />
                     <AudienceType audienceInfo={audience} />
+                </div>
+                <div>
+                    <AudiencePersonnal audiencePersonnal={audience} />
                 </div>
             </>
         )

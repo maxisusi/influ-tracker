@@ -1,0 +1,23 @@
+.audiencePersonnalWrapper {
+    width: 100%;
+}
+.chartMenu {
+    display: flex;
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    cursor: pointer;
+
+}
+
+.chartMenu p {
+    margin-right: 1.5em;
+}
+
+.chartMenu p {
+    font-weight: 500;
+    transition: all 0.3s ease-in;
+}
+
+.chartMenu p:hover {
+    color : #00CFFC;
+}
