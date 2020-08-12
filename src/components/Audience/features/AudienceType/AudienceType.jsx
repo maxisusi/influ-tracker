@@ -20,7 +20,6 @@ const AudienceType = ({ audienceInfo }) => {
                 '#ECA1FB',
                 '#00CFFC',
                 '#FBA0A0',
-
             ],
             backgroundColor: [
                 '#0DFFF599',
@@ -55,7 +54,7 @@ const AudienceType = ({ audienceInfo }) => {
                                 fontColor: 'white',
                                 fontSize: 18,
                             }
-                            
+
                         }
 
                     }} />

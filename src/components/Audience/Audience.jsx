@@ -8,7 +8,7 @@ const Audience = ({ audience }) => {
     if (audience) {
         return (
             <>
-                <h1 className={styles.MainTitle}>Audience</h1>
+                <h1 className="MainTitle">Audience</h1>
                 <div className={styles.audienceModuleFirstRow}>
 
                     <CountryCity countryCity={audience} />

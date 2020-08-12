@@ -18,6 +18,12 @@ p, li {
 
 h1 { font-family: 'ITC Avant Garde Gothic Pro' }
 
+.MainTitle{ 
+  font-size: 3rem;
+  margin-bottom: 1em;
+}
+
+
 .board {
   max-width: 1450px;
   height: 100vh;

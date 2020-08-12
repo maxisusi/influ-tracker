@@ -60,7 +60,7 @@ const AudiencePersonnal = ({ audiencePersonnal }) => {
                 width={100}
                 height={10}
                 options={{
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
                     tooltips: {
                         titleFontSize: 19,
                         bodyFontSize: 15,
