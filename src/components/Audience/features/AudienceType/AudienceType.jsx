@@ -10,7 +10,7 @@ const AudienceType = ({ audienceInfo }) => {
 
 
     const data = {
-        labels: [`Real People - ${personal}%`, `Influencers - ${nonPersonal}%`, `Mass Followers - ${massFollower}%`, `Suspicous - ${fakeAccount}%`],
+        labels: [`Real People`, `Influencers`, `Mass Followers`, `Suspicous`],
         datasets: [{
             label: 'People',
             data: [personal, nonPersonal, massFollower, fakeAccount],

@@ -21,3 +21,35 @@
 .chartMenu p:hover {
     color : #00CFFC;
 }
+
+.subMenuInfo {
+    display: flex;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 2.5em;
+}
+.subMenuData {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5em;
+}
+.dataEmphazise {
+    font-weight: 800;
+}
+.circleMan {
+    margin-right: .5em;
+    width: 15px;
+    height: 15px;
+    background-color: #00CFFC99;
+    border-radius: 100%;
+    border: 1px solid #00CFFC;
+}
+
+.circleWoman {
+    margin-right: .5em;
+    width: 15px;
+    height: 15px;
+    background-color: #EBA0FB99;
+    border-radius: 100%;
+    border: 1px solid #EBA0FB;
+}
