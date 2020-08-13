@@ -1,0 +1,17 @@
+.subMenu {
+    font-weight: 200;
+    margin-bottom: 1.5em;
+    color: #00CFFC;
+}
+
+.graphWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+}
+
+.graphElement {
+    width: 48%;
+}

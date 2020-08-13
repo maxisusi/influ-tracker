@@ -1,7 +1,8 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2';
 import abbreviateNumber from '../../../utils/abbreviateNumber';
-const FollowingEvolution = ({ followingGrowth }) => {
+
+const EngagementRate = ({ engagementRate }) => {
 
 
     const fDatas = {
@@ -9,15 +10,15 @@ const FollowingEvolution = ({ followingGrowth }) => {
         timestamp: []
     }
 
-        const followersCountArray = followingGrowth.generalStatistics.dynamics.followersCount;
-        console.log(followersCountArray);
+        const engagementRatesArray = engagementRate.generalStatistics.dynamics.engagementRates;
+        console.log(engagementRate);
 
 
-        for (let i = followersCountArray.length - 10; i < followersCountArray.length; i++) {
+        for (let i = engagementRatesArray.length - 10; i < engagementRatesArray.length; i++) {
 
-            fDatas.value.push(followersCountArray[i].value);
+            fDatas.value.push(engagementRatesArray[i].value.toFixed(2));
 
-            const unix_timestamp = followersCountArray[i].timestamp;
+            const unix_timestamp = engagementRatesArray[i].timestamp;
             let date = new Date(unix_timestamp);
             let month = date.getMonth();
             let day = date.getDay();
@@ -29,15 +30,13 @@ const FollowingEvolution = ({ followingGrowth }) => {
 
         }
 
-        console.log(fDatas);
 
-    
 
     const data = {
         labels: fDatas.timestamp,
         datasets: [
             {
-                label: 'Followers Growth',
+                label: 'Following',
                 data: fDatas.value,
                 borderWidth: 1.6,
                 borderColor: '#00D5FC',
@@ -47,10 +46,8 @@ const FollowingEvolution = ({ followingGrowth }) => {
 
         ]
     }
-
     return (
         <div>
-
             <Line
                 data={data}
                 width={100}
@@ -87,19 +84,7 @@ const FollowingEvolution = ({ followingGrowth }) => {
                                 fontColor: "white",
 
                                 callback: function (label, index, labels) {
-
-                                    let SI_SYMBOL = ["", "k", "M", "G", "T", "P", "E"];
-
-                                    let tier = Math.log10(label) / 3 | 0;
-
-                                    if (tier === 0) return label;
-
-                                    let suffix = SI_SYMBOL[tier];
-                                    let scale = Math.pow(10, tier * 3);
-
-                                    let scaled = label / scale;
-
-                                    return scaled.toFixed(1) + suffix;
+                                    return label + '%';
                                 }
                             },
 
@@ -122,10 +107,8 @@ const FollowingEvolution = ({ followingGrowth }) => {
                     }
                 }}
             />
-
-
         </div>
-
     )
 }
-export default FollowingEvolution;
+
+export default EngagementRate;
