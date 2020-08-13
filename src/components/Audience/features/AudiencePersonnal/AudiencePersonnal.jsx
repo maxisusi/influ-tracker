@@ -9,8 +9,8 @@ const AudiencePersonnal = ({ audiencePersonnal }) => {
 
     const { male, female } = audiencePersonnal.audienceStatistics.audienceGender;
 
-    const maleData = [mData['0-17'], mData['18-24'], mData['25-34'], mData['35-44'], mData['45-54'], mData['55-64']];
-    const femaleData = [fData['0-17'], fData['18-24'], fData['25-34'], fData['35-44'], fData['45-54'], fData['55-64']];
+    const maleData = Object.values(mData);
+    const femaleData = Object.values(fData);
 
     const data = {
         labels: ['0-17', '18-24', '25-34', '35-44', '45-54', '55-64'],

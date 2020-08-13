@@ -1,19 +1,48 @@
 import React from 'react'
-import {Line} from 'react-chartjs-2';
-const FollowingEvolution = ({followingGrowth}) => {
+import { Line } from 'react-chartjs-2';
+import abbreviateNumber from '../../../utils/abbreviateNumber';
+const FollowingEvolution = ({ followingGrowth }) => {
 
-    if(followingGrowth)
-        console.log(followingGrowth.generalStatistics.dynamics.followersCount.map( x => {
-            x.key = "timeStamp";
-        }));
 
+    const fDatas = {
+        value: [],
+        timestamp: []
+    }
+    if (followingGrowth) {
+
+        const followersCountArray = followingGrowth.generalStatistics.dynamics.followersCount;
+        console.log(followersCountArray);
+
+
+        for(let i = followersCountArray.length-30; i < followersCountArray.length; i++){
+
+            fDatas.value.push(followersCountArray[i].value);
+
+            const unix_timestamp = followersCountArray[i].timestamp;
+            let date = new Date(unix_timestamp);
+            let month = date.getMonth();
+            let year = date.getFullYear();
+
+            let formattedTime = month + '/' + year
+
+            fDatas.timestamp.push(formattedTime)
+
+        }
+
+
+    
+
+
+        console.log(fDatas);
+
+    }
 
     const data = {
-        labels: ['22','222'],
+        labels: fDatas.timestamp,
         datasets: [
             {
-                label: 'Followers',
-                data: [22,12,15,33],
+                label: 'Followers Growth',
+                data: fDatas.value,
                 borderWidth: 1.6,
                 borderColor: '#00D5FC',
                 backgroundColor: '#00D5FC99',
@@ -21,16 +50,17 @@ const FollowingEvolution = ({followingGrowth}) => {
 
         ]
     }
+
     return (
         <div>
 
             <Line
                 data={data}
                 width={100}
-                height={10}
+                height={30}
                 options={{
                     maintainAspectRatio: true,
-                    
+
                 }}
             />
 

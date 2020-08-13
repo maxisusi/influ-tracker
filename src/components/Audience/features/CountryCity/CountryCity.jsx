@@ -44,15 +44,10 @@ const CountryCity = ({ countryCity }) => {
 
     }, [menu])
 
-
-
-
     merge(defaults, {
         global: {
             defaultFontFamily: "Neue Haas Grotesk",
             defaultFontStyle: '500',
-
-
         },
     });
 
