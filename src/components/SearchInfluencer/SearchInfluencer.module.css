@@ -1,0 +1,28 @@
+.searchWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputElem {
+    padding: .5em;
+    padding-left: 2.5em;
+    width: 450px;
+    height: 25px;
+    background: #606D77;
+    border: none;
+    color: white;
+    border-radius: 2em;
+}
+
+.buttonSearch {
+    margin-left: 1.5em;
+    font-weight: 800;
+    width: 90px;
+    height: 35px;
+    background: #00CFFC;
+    border: none;
+    color: white;
+    border-radius: 2em;
+    cursor: pointer;
+}

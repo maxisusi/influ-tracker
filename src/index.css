@@ -7,6 +7,7 @@ body {
   background: #2F495B;
   color: #FFFFFF;
   font-family: 'Neue Haas Grotesk';
+  font-size: 15.5px;
   
 }
 
@@ -31,6 +32,12 @@ h1 { font-family: 'ITC Avant Garde Gothic Pro' }
 
   padding: .5em;
 
+}
+
+.smallBoard {
+  padding-top: 3em;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 .MainTitle {
