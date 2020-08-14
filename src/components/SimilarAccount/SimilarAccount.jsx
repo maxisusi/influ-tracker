@@ -4,6 +4,8 @@ import styles from './SimilarAccount.module.css';
 const SimilarAccount = ({ accountData }) => {
 
 
+    if (accountData) {
+
         return (
             <div>
                 <h1 className="MainTitle">Similar Accounts</h1>
@@ -18,6 +20,15 @@ const SimilarAccount = ({ accountData }) => {
                 </div>
             </div>
         )
+    }
+    else {
+        return (
+            <div>
+                Loading the similar account module
+            </div>
+        )
+    }
+
 
 }
 
