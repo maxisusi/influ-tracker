@@ -35,11 +35,17 @@ h1 { font-family: 'ITC Avant Garde Gothic Pro' }
 }
 
 .smallBoard {
-  padding-top: 3em;
-  max-width: 1250px;
+  padding-top: 2em;
+  max-width: 1000px;
   margin: 0 auto;
+
 }
 
+.separationLine{ 
+  margin-top: 1.5em;
+  color: #606D77;
+  opacity: 0.7;
+}
 .MainTitle {
   font-style: 3rem;
 }

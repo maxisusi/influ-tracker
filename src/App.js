@@ -9,7 +9,10 @@ function App() {
     <div className="App">
       <div className="smallBoard">
         <SearchInfluencer />
+
       </div>
+
+      <hr className="separationLine"/>
       <div className="board">
 
         <MainBoard avatar={API_DATA} />
