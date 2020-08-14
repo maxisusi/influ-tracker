@@ -21,7 +21,6 @@ const EngagementRate = ({ engagementRate }) => {
             const unix_timestamp = engagementRatesArray[i].timestamp;
             let date = new Date(unix_timestamp);
             let month = date.getMonth();
-            let day = date.getDay();
             let year = date.getFullYear();
 
             let formattedTime = `${month}/${year}`

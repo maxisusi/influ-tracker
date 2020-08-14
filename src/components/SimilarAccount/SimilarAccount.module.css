@@ -1,0 +1,18 @@
+.imgCard {
+    height: 70px;
+    width: 70px;
+    background-color: #FFFFFF;
+    border-radius: 100%;
+    margin-bottom: 1.5em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.engagementRate {
+    margin-top: 2em;
+    color: #B0B6BB;
+}
