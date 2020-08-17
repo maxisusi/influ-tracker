@@ -18,7 +18,7 @@ function App() {
         <MainBoard avatar={API_DATA} />
         <Audience audience={API_DATA} />
         <Growth growth={API_DATA} />
-        <SimilarAccount accountData={API_DATA} />
+        {/*<SimilarAccount accountData={API_DATA} />*/}
       </div>
 
 

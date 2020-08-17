@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .inputElem {
@@ -26,4 +25,40 @@
     color: white;
     border-radius: 2em;
     cursor: pointer;
+}
+
+.searchBarWrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 99;
+}
+
+.menuSuggestion {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    bottom: -500%;
+    width: 100%;
+    z-index: 9;
+    background-color: #606D77;
+    border-radius: 1em;
+}
+
+.menuSuggestion li {
+    padding: .7em;
+    margin-bottom: .2em;
+    z-index: 9;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    border-radius: 1em;
+}
+
+.menuSuggestion li:hover {
+    background-color: #00CFFC;
+}
+
+.searchElements {
+    display: flex;
 }

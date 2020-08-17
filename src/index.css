@@ -11,6 +11,8 @@ body {
   
 }
 
+
+
 p, li {
   font-weight: 100;
 
@@ -36,7 +38,7 @@ h1 { font-family: 'ITC Avant Garde Gothic Pro' }
 
 .smallBoard {
   padding-top: 2em;
-  max-width: 1000px;
+  max-width: 1450px;
   margin: 0 auto;
 
 }
@@ -45,6 +47,8 @@ h1 { font-family: 'ITC Avant Garde Gothic Pro' }
   margin-top: 1.5em;
   color: #606D77;
   opacity: 0.7;
+  z-index: 0;
+  position: relative;
 }
 .MainTitle {
   font-style: 3rem;

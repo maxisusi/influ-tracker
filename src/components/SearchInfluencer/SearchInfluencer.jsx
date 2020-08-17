@@ -6,19 +6,29 @@ const SearchInfluencer = () => {
 
     const [username, setUsername] = useState('');
     const [suggestion, setSuggestion] = useState(null);
+    const [selectedUser, setSelectedUser] = useState('');
 
     useEffect(() => {
         let apiCall = `https://app.influenceye.com/api/v1/searchAdvanced/getSuggestions?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&suggestionType=MENTIONED_USER_NAMES&query=${username}`;
         axios.get(apiCall)
             .then(response => setSuggestion(response.data))
             .catch(error => console.log(error))
-            console.log(suggestion);
+        console.log(suggestion);
 
     }, [username])
+
+    let subMenu;
+    if (username) {
+        subMenu = suggestion.map((elem, key) =>
+            <li key={key}>{elem}</li>
+        )
+    }
 
 
     return (
         <div className={styles.searchWrapper}>
+
+
             <div className={styles.logo}>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 27.661 31.735">
                     <defs>
@@ -30,11 +40,17 @@ const SearchInfluencer = () => {
                     <path id="Path_2" data-name="Path 2" d="M879.281,126.234l5.624-3.075.11-.189h.1l-.052-.09a1.252,1.252,0,0,0-.026-1.208l-4.191-7.26a1.255,1.255,0,0,0-1.084-.626h-16.72l-.052-.089-.052.09a1.256,1.256,0,0,0-1,.58h-.1l.051.089-4.167,7.218a1.255,1.255,0,0,0,0,1.25l5.7,9.913-5.506,3.079-.174.238h-.1l.049.085-.082.2a1.246,1.246,0,0,0-.06.381,1.2,1.2,0,0,0,.066.391l.005.039.1.195,4.193,7.262a1.258,1.258,0,0,0,1.084.626h16.715l.054.094.055-.1a1.256,1.256,0,0,0,1-.58h.1l-.052-.089,4.167-7.218a1.254,1.254,0,0,0,0-1.252Zm-15.565,16.6-2.748-4.76h8.352l-.97-1.709a1.238,1.238,0,0,0-.078-.164l-.949-1.643-.193-.34v0L860.246,122.3l2.748-4.76,14.6,25.3Zm16.049-1.251-14.6-25.3h13.882l2.748,4.76h-8.348l.962,1.694a1.212,1.212,0,0,0,.084.181l4.193,7.264,3.832,6.637Z" transform="translate(-857.548 -113.696)" fill="url(#linear-gradient)" />
                 </svg>
             </div>
-            <div>
-                <input type="text" placeholder="Search your influencer" className={styles.inputElem} onChange={(e) => {
-                    setUsername(e.target.value)
- 
-                }} />
+            <div className={styles.searchElements}>
+                <div className={styles.searchBarWrap}>
+                    <input type="text" placeholder="Search your influencer" className={styles.inputElem} onChange={(e) => {
+                        setUsername(e.target.value)
+                    }} />
+                    <ul className={styles.menuSuggestion}>
+                        {subMenu}
+                    </ul>
+
+                </div>
+
                 <button className={styles.buttonSearch}>search</button>
             </div>
 
