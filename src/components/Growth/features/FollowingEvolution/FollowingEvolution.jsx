@@ -10,7 +10,7 @@ const FollowingEvolution = ({ followingGrowth }) => {
     }
 
         const followersCountArray = followingGrowth.generalStatistics.dynamics.followersCount;
-        console.log(followersCountArray);
+
 
 
         for (let i = followersCountArray.length - 10; i < followersCountArray.length; i++) {
@@ -28,8 +28,6 @@ const FollowingEvolution = ({ followingGrowth }) => {
             fDatas.timestamp.push(formattedTime)
 
         }
-
-        console.log(fDatas);
 
     
 

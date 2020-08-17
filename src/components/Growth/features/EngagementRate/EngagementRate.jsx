@@ -11,7 +11,6 @@ const EngagementRate = ({ engagementRate }) => {
     }
 
         const engagementRatesArray = engagementRate.generalStatistics.dynamics.engagementRates;
-        console.log(engagementRate);
 
 
         for (let i = engagementRatesArray.length - 10; i < engagementRatesArray.length; i++) {
