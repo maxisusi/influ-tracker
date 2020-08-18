@@ -3,53 +3,51 @@
   padding: 0;
 }
 
-body { 
+body {
   background: #2F495B;
   color: #FFFFFF;
   font-family: 'Neue Haas Grotesk';
   font-size: 15.5px;
-  
 }
-
-
 
 p, li {
   font-weight: 100;
-
-
 }
 
-h1 { font-family: 'ITC Avant Garde Gothic Pro' }
+h1 {
+  font-family: 'ITC Avant Garde Gothic Pro'
+}
 
-.MainTitle{ 
+.MainTitle {
   font-size: 3rem;
   margin-bottom: 1em;
 }
 
+input:focus {
+  outline: none;
+}
 
 .board {
   max-width: 1450px;
   height: 100vh;
   margin: 0 auto;
-
   padding: .5em;
-
 }
 
 .smallBoard {
   padding-top: 2em;
   max-width: 1450px;
   margin: 0 auto;
-
 }
 
-.separationLine{ 
-  margin-top: 1.5em;
+.separationLine {
+  margin-top: 1.9em;
   color: #606D77;
   opacity: 0.7;
   z-index: 0;
   position: relative;
 }
+
 .MainTitle {
   font-style: 3rem;
 }
@@ -70,16 +68,13 @@ h1 { font-family: 'ITC Avant Garde Gothic Pro' }
   font-family: 'Neue Haas Grotesk';
   src: url('./fonts/NeueHaasDisplay-Thin/NeueHaasDisplay-Thin.ttf');
   font-weight: 200;
-
 }
 
 @font-face {
   font-family: 'Neue Haas Grotesk';
   font-weight: 400;
   src: url('./fonts/NeueHaasDisplay-Mediu.eot');
-  src: url('./fonts/NeueHaasDisplay-Mediu.eot?#iefix') format('embedded-opentype'),
-  url('./fonts/NeueHaasDisplay-Mediu.woff') format('woff'),
-  url('./fonts/NeueHaasDisplay-Mediu.ttf') format('truetype');
+  src: url('./fonts/NeueHaasDisplay-Mediu.eot?#iefix') format('embedded-opentype'), url('./fonts/NeueHaasDisplay-Mediu.woff') format('woff'), url('./fonts/NeueHaasDisplay-Mediu.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  }
+}

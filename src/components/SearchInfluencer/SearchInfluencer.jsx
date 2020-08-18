@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import styles from './SearchInfluencer.module.css';
+import GetInfluencerData, {influencerUsername} from '../API/GetInfluencerData';
 
 const SearchInfluencer = () => {
 
@@ -8,16 +9,16 @@ const SearchInfluencer = () => {
     const [suggestion, setSuggestion] = useState(null);
     const [selectedUser, setSelectedUser] = useState('');
 
+    let subMenu;
+
     useEffect(() => {
         let apiCall = `https://app.influenceye.com/api/v1/searchAdvanced/getSuggestions?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&suggestionType=MENTIONED_USER_NAMES&query=${username}`;
         axios.get(apiCall)
             .then(response => setSuggestion(response.data))
             .catch(error => console.log(error))
-        console.log(suggestion);
 
     }, [username])
 
-    let subMenu;
     if (username) {
         subMenu = suggestion.map((elem, key) =>
             <li key={key}>{elem}</li>
@@ -26,9 +27,8 @@ const SearchInfluencer = () => {
 
 
     return (
+
         <div className={styles.searchWrapper}>
-
-
             <div className={styles.logo}>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 27.661 31.735">
                     <defs>
@@ -45,7 +45,8 @@ const SearchInfluencer = () => {
                     <input type="text" placeholder="Search your influencer" className={styles.inputElem} onChange={(e) => {
                         setUsername(e.target.value)
                     }} />
-                    <ul className={styles.menuSuggestion}>
+
+                    <ul className={styles.menuSuggestion} onClick={(e) => { setSelectedUser(e.target.innerText); influencerUsername(selectedUser); }}>
                         {subMenu}
                     </ul>
 
