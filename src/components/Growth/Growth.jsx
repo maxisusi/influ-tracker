@@ -1,7 +1,8 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { FollowingEvolution, EngagementRate } from './features/index';
 import styles from './Growth.module.css';
-import {GetInfluencerData} from '../API/GetInfluencerData'
+import { GetInfluencerData } from '../API/GetInfluencerData';
+import ReactLoading from 'react-loading';
 
 const Growth = () => {
 
@@ -30,9 +31,7 @@ const Growth = () => {
 
     else {
         return (
-            <div>
-                Loading Growth Datas
-            </div>
+            <div className='loading'><ReactLoading type={'cylon'} color={'#00CFFC'} height={'20%'} width={'20%'} /></div>
         )
     }
 }

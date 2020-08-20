@@ -8,7 +8,7 @@ export const GetInfluencerProvider = props => {
 
 
     const [avatar, setAvatar] = useState(null);
-    const [user, setUser] = useState('cristiano');
+    const [user, setUser] = useState('tootatis');
 
 
     const API_KEY = `https://app.influenceye.com/api/v1/profile/findByUsername?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&network=instagram&username=${user}`
@@ -26,9 +26,6 @@ export const GetInfluencerProvider = props => {
             .then(console.log(`I've been called`))
             .catch(error => console.log('This is the error' + error))
     }, [apiKey, user])
-
-    console.log(user)
-
 
     return (
         <GetInfluencerData.Provider value={[avatar, setAvatar]}>

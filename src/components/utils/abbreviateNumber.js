@@ -1,3 +1,4 @@
+
 var SI_SYMBOL = ["", "k", "M", "G", "T", "P", "E"];
 
 export default function (number) {

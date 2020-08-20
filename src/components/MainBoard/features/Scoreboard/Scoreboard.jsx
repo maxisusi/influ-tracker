@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Scoreboard.module.css';
-
+import CountUp from 'react-countup';
 const Scoreboard = ({ scoring }) => {
 
     const { influenceyeRating, audienceStatistics, generalStatistics } = scoring;
@@ -24,7 +24,12 @@ const Scoreboard = ({ scoring }) => {
                                 <p className={styles.scoreSubTitle}>Quality of the influencer</p>
                             </div>
                         </div>
-                        <h3 className={styles.scoreResult}><span className={styles.thinScore}>{influenceyeRating.toFixed()}</span>/100</h3>
+                        <h3 className={styles.scoreResult}><span className={styles.thinScore}>
+                            <CountUp 
+                                start={0}
+                                end={influenceyeRating.toFixed()}
+                                duration={1.5}>
+                            </CountUp></span>/100</h3>
                     </div>
 
                 </li>
@@ -46,7 +51,17 @@ const Scoreboard = ({ scoring }) => {
                                 <p className={styles.scoreSubTitle}>Engagement from legit accounts</p>
                             </div>
                         </div>
-                        <h3 className={styles.scoreResult}>{realEngagementRate.toFixed(2)}%</h3>
+                        <h3 className={styles.scoreResult}>
+                        <CountUp 
+                                start={0}
+                                end={realEngagementRate}
+                                duration={1}
+                                separator={','}
+                                suffix={'%'}
+                                decimals={2}
+                                >
+                            </CountUp>
+                            </h3>
                     </div>
 
                 </li>

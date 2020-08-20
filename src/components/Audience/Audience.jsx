@@ -1,12 +1,13 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { CountryCity, AudienceType, AudiencePersonnal } from './features'
 import styles from './Audience.module.css';
 import {GetInfluencerData} from '../API/GetInfluencerData';
+import ReactLoading from 'react-loading';
 
 const Audience = () => {
 
     const [avatar, setAvatar] = useContext(GetInfluencerData);
-
+    
     if (avatar) {
         return (
             <>
@@ -24,7 +25,7 @@ const Audience = () => {
     }
 
     else {
-        return (<div>Loading the Audience</div>)
+        return (<div className='loading'><ReactLoading type={'cylon'} color={'#00CFFC'} height={'20%'} width={'20%'} /></div>)
     }
 }
 

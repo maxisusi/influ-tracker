@@ -1,13 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Avatar.module.css';
 
 const Avatar = ({ avatarName }) => {
 
-    const { userName, fullName, locationShowName, picture, verified } = avatarName;
-    let [checked, isChecked] = useState(verified);
-    let [located, isLocated] = useState(locationShowName);
+
+
+    const { userName, fullName, locationShowName, picture, verified, contact } = avatarName;
+
+    let [checked, setChecked] = useState(verified);
+    let [located, setLocated] = useState(locationShowName);
+    let [email, setEmail] = useState(contact);
+
+
+    useEffect(() => {
+        setChecked(verified);
+        setLocated(locationShowName);
+        setEmail(contact);
+
+    }, [avatarName])
+
+    console.log(checked);
 
     const interest = avatarName.audienceStatistics.audienceInterestsCategories;
+
     const interestElementCount = 9;
     if (interest.length > interestElementCount) {
         interest.length = interestElementCount;
@@ -42,6 +57,7 @@ const Avatar = ({ avatarName }) => {
                             </div>
                         </div>
                         <h1>{fullName}</h1>
+                        <h1>{contact.emails}</h1>
                     </div>
                 </div>
                 <div>

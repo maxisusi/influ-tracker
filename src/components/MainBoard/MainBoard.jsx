@@ -1,11 +1,13 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { Avatar, Stats, RealEngagement, Scoreboard } from './features';
 import styles from './MainBoard.module.css';
-import {GetInfluencerData} from '../API/GetInfluencerData';
+import { GetInfluencerData } from '../API/GetInfluencerData';
+import ReactLoading from 'react-loading';
 
 const MainBoard = () => {
 
     const [avatar, setAvatar] = useContext(GetInfluencerData);
+        
 
     if (avatar) {
         return (
@@ -24,7 +26,7 @@ const MainBoard = () => {
     }
 
     else {
-        return (<div>Loading MainBoard...</div>)
+        return (<div className='loading'><ReactLoading type={'cylon'} color={'#00CFFC'} height={'20%'} width={'20%'} /></div>)
     }
 
 

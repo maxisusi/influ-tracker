@@ -5,20 +5,22 @@ import { GetInfluencerData, ChangeUsername } from '../API/GetInfluencerData';
 const SearchInfluencer = () => {
 
     const [username, setUsername] = useState('');
-    const [selectedUser, setSelectedUser] = useState('');
+    const [selectedUser, setSelectedUser] = useState(null);
     const [suggestion, setSuggestion] = useState(null);
 
     const [user, setUser] = useContext(ChangeUsername);
 
     let subMenu;
 
-
-
-    const changeInfluencer = e => {
-        setUser(e.target.innerText);
+    const changeInfluencer = (e) => {
+        setSelectedUser(e.target.innerText)
+        e.target.value = '';
     }
 
-    console.log(selectedUser)
+    useEffect(() => {
+        setUser(selectedUser);
+        console.log(selectedUser)
+    }, [selectedUser])
 
     useEffect(() => {
         const apiCall = `https://app.influenceye.com/api/v1/searchAdvanced/getSuggestions?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&suggestionType=MENTIONED_USER_NAMES&query=${username}`;
@@ -49,18 +51,19 @@ const SearchInfluencer = () => {
                 </svg>
             </div>
             <div className={styles.searchElements}>
-                <div className={styles.searchBarWrap}>
-                    <input type="text" placeholder="Search your influencer" className={styles.inputElem} onChange={(e) => {
-                        setUsername(e.target.value)
-                    }} />
+                <form className={styles.searchBarWrap}>
+                    <input type="text" placeholder="Search your influencer" className={styles.inputElem}
+                        onChange={(e) => {
+                            setUsername(e.target.value)
+                        }} />
 
-                    <ul className={styles.menuSuggestion} onClick={(e) => { setSelectedUser(e.target.innerText); changeInfluencer(e) }}>
+                    <ul className={styles.menuSuggestion} onClick={(e) => { changeInfluencer(e); setUsername(null) }}>
                         {subMenu}
                     </ul>
 
-                </div>
+                </form>
 
-                <button className={styles.buttonSearch}>search</button>
+                {/* <button className={styles.buttonSearch}>search</button> */}
             </div>
 
             <div>
