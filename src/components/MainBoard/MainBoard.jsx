@@ -1,10 +1,11 @@
-import React from 'react';
-
+import React, {useContext} from 'react';
 import { Avatar, Stats, RealEngagement, Scoreboard } from './features';
-
 import styles from './MainBoard.module.css';
+import {GetInfluencerData} from '../API/GetInfluencerData';
 
-const MainBoard = ({avatar}) => {
+const MainBoard = () => {
+
+    const [avatar, setAvatar] = useContext(GetInfluencerData);
 
     if (avatar) {
         return (

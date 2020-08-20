@@ -1,18 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios';
 import styles from './SearchInfluencer.module.css';
-import GetInfluencerData, {influencerUsername} from '../API/GetInfluencerData';
-
+import { GetInfluencerData, ChangeUsername } from '../API/GetInfluencerData';
 const SearchInfluencer = () => {
 
     const [username, setUsername] = useState('');
-    const [suggestion, setSuggestion] = useState(null);
     const [selectedUser, setSelectedUser] = useState('');
+    const [suggestion, setSuggestion] = useState(null);
+
+    const [user, setUser] = useContext(ChangeUsername);
 
     let subMenu;
 
+
+
+    const changeInfluencer = e => {
+        setUser(e.target.innerText);
+    }
+
+    console.log(selectedUser)
+
     useEffect(() => {
-        let apiCall = `https://app.influenceye.com/api/v1/searchAdvanced/getSuggestions?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&suggestionType=MENTIONED_USER_NAMES&query=${username}`;
+        const apiCall = `https://app.influenceye.com/api/v1/searchAdvanced/getSuggestions?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&suggestionType=MENTIONED_USER_NAMES&query=${username}`;
         axios.get(apiCall)
             .then(response => setSuggestion(response.data))
             .catch(error => console.log(error))
@@ -24,7 +33,6 @@ const SearchInfluencer = () => {
             <li key={key}>{elem}</li>
         )
     }
-
 
     return (
 
@@ -46,7 +54,7 @@ const SearchInfluencer = () => {
                         setUsername(e.target.value)
                     }} />
 
-                    <ul className={styles.menuSuggestion} onClick={(e) => { setSelectedUser(e.target.innerText); influencerUsername(selectedUser); }}>
+                    <ul className={styles.menuSuggestion} onClick={(e) => { setSelectedUser(e.target.innerText); changeInfluencer(e) }}>
                         {subMenu}
                     </ul>
 

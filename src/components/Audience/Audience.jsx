@@ -1,21 +1,23 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { CountryCity, AudienceType, AudiencePersonnal } from './features'
 import styles from './Audience.module.css';
+import {GetInfluencerData} from '../API/GetInfluencerData';
 
+const Audience = () => {
 
-const Audience = ({ audience }) => {
+    const [avatar, setAvatar] = useContext(GetInfluencerData);
 
-    if (audience) {
+    if (avatar) {
         return (
             <>
                 <h1 className="MainTitle">Audience</h1>
                 <div className={styles.audienceModuleFirstRow}>
 
-                    <CountryCity countryCity={audience} />
-                    <AudienceType audienceInfo={audience} />
+                    <CountryCity countryCity={avatar} />
+                    <AudienceType audienceInfo={avatar} />
                 </div>
                 <div>
-                    <AudiencePersonnal audiencePersonnal={audience} />
+                    <AudiencePersonnal audiencePersonnal={avatar} />
                 </div>
             </>
         )

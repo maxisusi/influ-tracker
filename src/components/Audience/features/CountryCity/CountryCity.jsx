@@ -42,7 +42,7 @@ const CountryCity = ({ countryCity }) => {
 
         })
 
-    }, [menu])
+    }, [menu,countryCity])
 
     merge(defaults, {
         global: {

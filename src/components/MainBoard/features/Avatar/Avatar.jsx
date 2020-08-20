@@ -43,14 +43,12 @@ const Avatar = ({ avatarName }) => {
                         </div>
                         <h1>{fullName}</h1>
                     </div>
-                    
-
                 </div>
                 <div>
-                        <ul className={styles.avatarInterest}>
-                            {interestElem}
-                        </ul>
-                    </div>
+                    <ul className={styles.avatarInterest}>
+                        {interestElem}
+                    </ul>
+                </div>
             </div>
         </>
     )

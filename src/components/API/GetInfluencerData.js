@@ -1,40 +1,45 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, createContext } from 'react'
 import axios from 'axios';
-import SearchInfluencer from '../SearchInfluencer/SearchInfluencer';
 
-export const influencerUsername = (data) => {
+export const GetInfluencerData = createContext();
+export const ChangeUsername = createContext();
 
-    let userName = 'cristiano'
-
-    if(data)
-        userName = data;
-
-    const API_KEY = `https://app.influenceye.com/api/v1/profile/findByUsername?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&network=instagram&username=${userName}`
-    console.log(API_KEY)
-    
-    return API_KEY;
-
-}
+export const GetInfluencerProvider = props => {
 
 
-const GetInfluencerData = () => {
-
-    const API_KEY = influencerUsername();
-    console.log(API_KEY);
     const [avatar, setAvatar] = useState(null);
+    const [user, setUser] = useState('cristiano');
+
+
+    const API_KEY = `https://app.influenceye.com/api/v1/profile/findByUsername?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&network=instagram&username=${user}`
+    const [apiKey, setApiKey] = useState(API_KEY);
 
     useEffect(() => {
-        axios.get(API_KEY)
+        setApiKey(API_KEY)
+    }, [user])
+
+    useEffect(() => {
+        axios.get(apiKey)
+
             .then(response =>
                 setAvatar(response.data))
+            .then(console.log(`I've been called`))
+            .catch(error => console.log('This is the error' + error))
+    }, [apiKey, user])
 
-            .catch(error => console.log(error))
-    }, [API_KEY])
+    console.log(user)
 
-    return avatar;
+
+    return (
+        <GetInfluencerData.Provider value={[avatar, setAvatar]}>
+            <ChangeUsername.Provider value={[user, setUser]}>
+                {props.children}
+            </ChangeUsername.Provider>
+        </GetInfluencerData.Provider>
+    );
 
 }
 
 
-export default GetInfluencerData;
+
 
