@@ -19,7 +19,6 @@ const SearchInfluencer = () => {
 
     useEffect(() => {
         setUser(selectedUser);
-        console.log(selectedUser)
     }, [selectedUser])
 
     useEffect(() => {

@@ -57,7 +57,7 @@ const Avatar = ({ avatarName }) => {
                             </div>
                         </div>
                         <h1>{fullName}</h1>
-                        <h1>{contact.emails}</h1>
+                        <p className="mailBold">{contact.emails}</p>
                     </div>
                 </div>
                 <div>

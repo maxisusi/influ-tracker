@@ -23,6 +23,11 @@ h1 {
   margin-bottom: 1em;
 }
 
+
+.mailBold {
+  font-weight: bold;
+}
+
 input:focus {
   outline: none;
 }
