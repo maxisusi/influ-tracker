@@ -17,6 +17,10 @@ const SearchInfluencer = () => {
         e.target.value = '';
     }
 
+    const changeInfluencerEnter = (e) => {
+        setSelectedUser(username)
+    }
+
     useEffect(() => {
         setUser(selectedUser);
     }, [selectedUser])
@@ -50,7 +54,7 @@ const SearchInfluencer = () => {
                 </svg>
             </div>
             <div className={styles.searchElements}>
-                <form className={styles.searchBarWrap}>
+                <form className={styles.searchBarWrap} onSubmit={(e) => e.preventDefault()}>
                     <input type="text" placeholder="Search your influencer" className={styles.inputElem}
                         onChange={(e) => {
                             setUsername(e.target.value)
