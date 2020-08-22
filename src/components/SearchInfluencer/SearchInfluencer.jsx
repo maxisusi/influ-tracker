@@ -1,43 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react'
-import axios from 'axios';
+import React from 'react'
 import styles from './SearchInfluencer.module.css';
-import { GetInfluencerData, ChangeUsername } from '../API/GetInfluencerData';
+import { SearchBar } from './features/index';
+
 const SearchInfluencer = () => {
 
-    const [username, setUsername] = useState('');
-    const [selectedUser, setSelectedUser] = useState(null);
-    const [suggestion, setSuggestion] = useState(null);
 
-    const [user, setUser] = useContext(ChangeUsername);
-
-    let subMenu;
-
-    const changeInfluencer = (e) => {
-        setSelectedUser(e.target.innerText)
-        e.target.value = '';
-    }
-
-    const changeInfluencerEnter = (e) => {
-        setSelectedUser(username)
-    }
-
-    useEffect(() => {
-        setUser(selectedUser);
-    }, [selectedUser])
-
-    useEffect(() => {
-        const apiCall = `https://app.influenceye.com/api/v1/searchAdvanced/getSuggestions?apiKey=d3245b91-9442-8a52-de68-bb1e253bf807&suggestionType=MENTIONED_USER_NAMES&query=${username}`;
-        axios.get(apiCall)
-            .then(response => setSuggestion(response.data))
-            .catch(error => console.log(error))
-
-    }, [username])
-
-    if (username) {
-        subMenu = suggestion.map((elem, key) =>
-            <li key={key}>{elem}</li>
-        )
-    }
 
     return (
 
@@ -54,32 +21,22 @@ const SearchInfluencer = () => {
                 </svg>
             </div>
             <div className={styles.searchElements}>
-                <form className={styles.searchBarWrap} onSubmit={(e) => e.preventDefault()}>
-                    <input type="text" placeholder="Search your influencer" className={styles.inputElem}
-                        onChange={(e) => {
-                            setUsername(e.target.value)
-                        }} />
+                <SearchBar />
 
-                    <ul className={styles.menuSuggestion} onClick={(e) => { changeInfluencer(e); setUsername(null) }}>
-                        {subMenu}
-                    </ul>
-
-                </form>
-
-                {/* <button className={styles.buttonSearch}>search</button> */}
+                    {/* <button className={styles.buttonSearch}>search</button> */}
             </div>
 
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 43 43">
-                    <g id="Group_5" data-name="Group 5" transform="translate(-1425.357 -12.357)">
-                        <circle id="Ellipse_1" data-name="Ellipse 1" cx="21.5" cy="21.5" r="21.5" transform="translate(1425.357 12.357)" fill="#606d77" />
-                        <path id="iconmonstr-user-6" d="M9.516,1.586A3.965,3.965,0,1,1,5.551,5.552,3.97,3.97,0,0,1,9.516,1.586ZM9.516,0a5.551,5.551,0,1,0,5.551,5.552A5.551,5.551,0,0,0,9.516,0Zm5.05,10.589a7.182,7.182,0,0,1-1.315,1.032,10.135,10.135,0,0,1,3.943,5.825H1.821a9.809,9.809,0,0,1,3.943-5.835,7.143,7.143,0,0,1-1.315-1.04A11.663,11.663,0,0,0,0,19.031H19.031A11.914,11.914,0,0,0,14.566,10.589Z" transform="translate(1437.707 23.243)" fill="#fff" />
-                    </g>
-                </svg>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 43 43">
+                        <g id="Group_5" data-name="Group 5" transform="translate(-1425.357 -12.357)">
+                            <circle id="Ellipse_1" data-name="Ellipse 1" cx="21.5" cy="21.5" r="21.5" transform="translate(1425.357 12.357)" fill="#606d77" />
+                            <path id="iconmonstr-user-6" d="M9.516,1.586A3.965,3.965,0,1,1,5.551,5.552,3.97,3.97,0,0,1,9.516,1.586ZM9.516,0a5.551,5.551,0,1,0,5.551,5.552A5.551,5.551,0,0,0,9.516,0Zm5.05,10.589a7.182,7.182,0,0,1-1.315,1.032,10.135,10.135,0,0,1,3.943,5.825H1.821a9.809,9.809,0,0,1,3.943-5.835,7.143,7.143,0,0,1-1.315-1.04A11.663,11.663,0,0,0,0,19.031H19.031A11.914,11.914,0,0,0,14.566,10.589Z" transform="translate(1437.707 23.243)" fill="#fff" />
+                        </g>
+                    </svg>
 
-            </div>
+                </div>
 
-        </div >
+            </div >
     )
 }
 

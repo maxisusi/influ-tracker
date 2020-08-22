@@ -18,9 +18,7 @@ const Avatar = ({ avatarName }) => {
         setEmail(contact);
 
     }, [avatarName])
-
-    console.log(checked);
-
+    
     const interest = avatarName.audienceStatistics.audienceInterestsCategories;
 
     const interestElementCount = 9;

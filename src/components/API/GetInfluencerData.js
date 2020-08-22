@@ -18,14 +18,11 @@ export const GetInfluencerProvider = props => {
         setApiKey(API_KEY)
     }, [user])
 
-    console.log(API_KEY)
-
     useEffect(() => {
         axios.get(apiKey)
 
             .then(response =>
                 setAvatar(response.data))
-            .then(console.log(`I've been called`))
             .catch(error => console.log('This is the error: ' + error))
     }, [apiKey])
 
