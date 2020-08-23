@@ -34,17 +34,22 @@ const SearchBar = () => {
 
     if (username) {
         subMenu = suggestion.map((elem, key) =>
+
             <option key={key} value={elem} className={styles.influencerSuggestionList} />
         )
     }
 
+
     return (
         <div>
-            <form className={styles.searchBarWrap}
+            <form
+                className={styles.searchBarWrap}
+                id="searchFormSubmit"
                 onSubmit={(e) => {
                     e.preventDefault();
                     changeInfluencer(username);
                     setUsername(null);
+                    
                 }}>
                 <input
                     list="influencer"
@@ -52,10 +57,10 @@ const SearchBar = () => {
                     placeholder="Search your influencer"
                     className={styles.inputElem}
                     onChange={(e) => setUsername(e.target.value)} />
-                <datalist  id="influencer">
+                <datalist id="influencer">
                     {subMenu}
                 </datalist>
-                
+                <button className={styles.buttonSearch} type="submit">search</button>
             </form>
         </div >
     )

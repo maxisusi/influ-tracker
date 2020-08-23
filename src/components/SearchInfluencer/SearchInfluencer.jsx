@@ -23,7 +23,7 @@ const SearchInfluencer = () => {
             <div className={styles.searchElements}>
                 <SearchBar />
 
-                    {/* <button className={styles.buttonSearch}>search</button> */}
+
             </div>
 
                 <div>

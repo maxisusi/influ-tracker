@@ -29,7 +29,6 @@
 
 .searchBarWrap {
     display: flex;
-    flex-direction: column;
     position: relative;
     z-index: 99;
 }
@@ -52,7 +51,7 @@ datalist option {
     border-radius: 1em;
 } */
 .influencerSuggestionList {
-    background-color: red;
+    background: red;
 }
 
 

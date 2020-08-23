@@ -32,6 +32,10 @@ input:focus {
   outline: none;
 }
 
+option {
+  background-color: red;
+}
+
 .board {
   max-width: 1450px;
   height: 100vh;
