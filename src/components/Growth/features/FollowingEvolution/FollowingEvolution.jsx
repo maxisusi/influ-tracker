@@ -60,6 +60,11 @@ const FollowingEvolution = ({ followingGrowth }) => {
                         titleFontSize: 16,
                         bodyFontSize: 15,
                         bodySpacing: 2,
+                        callbacks: {
+                            label: function(tooltipItems, data) { 
+                                return abbreviateNumber(tooltipItems.yLabel);
+                            }
+                        }
 
                     },
                     legend: {

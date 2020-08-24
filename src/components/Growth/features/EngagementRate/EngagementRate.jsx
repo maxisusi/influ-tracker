@@ -10,23 +10,23 @@ const EngagementRate = ({ engagementRate }) => {
         timestamp: []
     }
 
-        const engagementRatesArray = engagementRate.generalStatistics.dynamics.engagementRates;
+    const engagementRatesArray = engagementRate.generalStatistics.dynamics.engagementRates;
 
 
-        for (let i = engagementRatesArray.length - 10; i < engagementRatesArray.length; i++) {
+    for (let i = engagementRatesArray.length - 10; i < engagementRatesArray.length; i++) {
 
-            fDatas.value.push(engagementRatesArray[i].value.toFixed(2));
+        fDatas.value.push(engagementRatesArray[i].value.toFixed(2));
 
-            const unix_timestamp = engagementRatesArray[i].timestamp;
-            let date = new Date(unix_timestamp);
-            let month = date.getMonth();
-            let year = date.getFullYear();
+        const unix_timestamp = engagementRatesArray[i].timestamp;
+        let date = new Date(unix_timestamp);
+        let month = date.getMonth();
+        let year = date.getFullYear();
 
-            let formattedTime = `${month}/${year}`
+        let formattedTime = `${month}/${year}`
 
-            fDatas.timestamp.push(formattedTime)
+        fDatas.timestamp.push(formattedTime)
 
-        }
+    }
 
 
 
@@ -39,7 +39,7 @@ const EngagementRate = ({ engagementRate }) => {
                 borderWidth: 1.6,
                 borderColor: '#00D5FC',
                 backgroundColor: '#00D5FC10',
-    
+
             },
 
         ]
@@ -57,6 +57,11 @@ const EngagementRate = ({ engagementRate }) => {
                         titleFontSize: 16,
                         bodyFontSize: 15,
                         bodySpacing: 2,
+                        callbacks: {
+                            label: function (tooltipItems, data) {
+                                return tooltipItems.yLabel + '%';
+                            }
+                        }
 
                     },
                     legend: {

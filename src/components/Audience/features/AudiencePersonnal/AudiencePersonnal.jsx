@@ -64,7 +64,12 @@ const AudiencePersonnal = ({ audiencePersonnal }) => {
                     tooltips: {
                         titleFontSize: 19,
                         bodyFontSize: 15,
-                        bodySpacing: 2
+                        bodySpacing: 2,
+                        callbacks: {
+                            label: function(tooltipItems, data) { 
+                                return tooltipItems.yLabel + '%';
+                            }
+                        }
                     },
                     legend: {
                         display: false,
@@ -74,6 +79,11 @@ const AudiencePersonnal = ({ audiencePersonnal }) => {
                         labels: {
                             fontColor: 'white',
                             fontSize: 16
+                        },
+                        callbacks: {
+                            label: function(tooltipItems, data) { 
+                                return tooltipItems.yLabel + '%';
+                            }
                         }
                     },
 

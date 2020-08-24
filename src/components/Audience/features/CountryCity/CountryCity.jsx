@@ -23,7 +23,7 @@ const CountryCity = ({ countryCity }) => {
 
             for (let i = 0; i < 5; i++) {
                 countryLabel.push(countryCity.audienceStatistics.countries[i].showName);
-                countryData.push(countryCity.audienceStatistics.countries[i].count);
+                countryData.push(countryCity.audienceStatistics.countries[i].percent);
 
             }
         }
@@ -31,7 +31,7 @@ const CountryCity = ({ countryCity }) => {
         else if (menu === 'city'){
             for (let i = 0; i < 5; i++) {
                 countryLabel.push(countryCity.audienceStatistics.topCities[i].showName);
-                countryData.push(countryCity.audienceStatistics.topCities[i].count);
+                countryData.push(countryCity.audienceStatistics.topCities[i].percent);
 
             }
         }
@@ -93,7 +93,13 @@ const CountryCity = ({ countryCity }) => {
                         tooltips: {
                             titleFontSize: 19,
                             bodyFontSize: 15,
-                            bodySpacing: 2
+                            bodySpacing: 2,
+                            callbacks: {
+                                label: function(tooltipItems, data) { 
+                                    return tooltipItems.xLabel + '%';
+                                }
+                            }
+                            
                         },
                         legend: {
                             display: true,
