@@ -13,7 +13,7 @@ const CountryCity = ({ countryCity }) => {
     });
 
     const [menu, setMenu] = useState('country');
-    
+
     useEffect(() => {
 
         const countryLabel = [];
@@ -22,15 +22,15 @@ const CountryCity = ({ countryCity }) => {
         if (menu === 'country') {
 
             for (let i = 0; i < 5; i++) {
-                countryLabel.push(countryCity.audienceStatistics.countries[i].showName);
+                countryLabel.push(countryCity.audienceStatistics.countries[i].showName + ' - ' + countryCity.audienceStatistics.countries[i].percent + '%');
                 countryData.push(countryCity.audienceStatistics.countries[i].percent);
 
             }
         }
 
-        else if (menu === 'city'){
+        else if (menu === 'city') {
             for (let i = 0; i < 5; i++) {
-                countryLabel.push(countryCity.audienceStatistics.topCities[i].showName);
+                countryLabel.push(countryCity.audienceStatistics.topCities[i].showName + ' - ' + countryCity.audienceStatistics.topCities[i].percent + '%');
                 countryData.push(countryCity.audienceStatistics.topCities[i].percent);
 
             }
@@ -42,7 +42,7 @@ const CountryCity = ({ countryCity }) => {
 
         })
 
-    }, [menu,countryCity])
+    }, [menu, countryCity])
 
     merge(defaults, {
         global: {
@@ -80,7 +80,7 @@ const CountryCity = ({ countryCity }) => {
         <div className={styles.chartWrapper}>
             <div className={styles.chartMenu}>
                 <p onClick={() => setMenu('country')} style={{ color: menu === 'country' ? '#00CFFC' : '#B0B6BB' }}>Country</p>
-                <p onClick={() => setMenu('city')}style={{ color: menu === 'city' ? '#00CFFC' : '#B0B6BB' }}>City</p>
+                <p onClick={() => setMenu('city')} style={{ color: menu === 'city' ? '#00CFFC' : '#B0B6BB' }}>City</p>
             </div>
             <div className={styles.chart}>
                 <HorizontalBar
@@ -95,11 +95,11 @@ const CountryCity = ({ countryCity }) => {
                             bodyFontSize: 15,
                             bodySpacing: 2,
                             callbacks: {
-                                label: function(tooltipItems, data) { 
+                                label: function (tooltipItems, data) {
                                     return tooltipItems.xLabel + '%';
                                 }
                             }
-                            
+
                         },
                         legend: {
                             display: true,

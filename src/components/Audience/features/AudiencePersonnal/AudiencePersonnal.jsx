@@ -28,7 +28,6 @@ const AudiencePersonnal = ({ audiencePersonnal }) => {
                 borderWidth: 1.6,
                 borderColor: '#EBA0FB',
                 backgroundColor: '#EBA0FB99'
-
             },
 
         ]

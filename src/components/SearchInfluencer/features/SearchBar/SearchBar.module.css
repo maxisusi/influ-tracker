@@ -33,23 +33,6 @@
     z-index: 99;
 }
 
- /* {
-
-    margin-top: 3.5em;
-    width: 100%;
-    z-index: 9;
-    background-color: #606D77;
-    border-radius: 1em;
-}
-
-datalist option {
-    padding: .7em;
-    margin-bottom: .2em;
-    z-index: 9;
-    cursor: pointer;
-    transition: all 0.1s ease-in;
-    border-radius: 1em;
-} */
 .influencerSuggestionList {
     background: red;
 }

@@ -4,8 +4,6 @@ import { SearchBar } from './features/index';
 
 const SearchInfluencer = () => {
 
-
-
     return (
 
         <div className={styles.searchWrapper}>
@@ -23,9 +21,7 @@ const SearchInfluencer = () => {
             <div className={styles.searchElements}>
                 <SearchBar />
 
-
             </div>
-
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 43 43">
                         <g id="Group_5" data-name="Group 5" transform="translate(-1425.357 -12.357)">

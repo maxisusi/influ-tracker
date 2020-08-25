@@ -10,7 +10,7 @@ const AudienceType = ({ audienceInfo }) => {
 
 
     const data = {
-        labels: [`Real People`, `Non personal`, `Mass Followers`, `Suspicous`],
+        labels: [`Quality People - ${personal}%`, `Non personal - ${nonPersonal}%`, `Mass Followers - ${massFollower}%`, `Suspicous - ${fakeAccount}%`],
         datasets: [{
             label: 'People',
             data: [personal, nonPersonal, massFollower, fakeAccount],
@@ -50,7 +50,7 @@ const AudienceType = ({ audienceInfo }) => {
                                     return `${data.labels[tooltipItem[0].index]}`;
                                 },
                                 label: function (tooltipItem, data) {
-                                    return `${data.datasets[0].data[tooltipItem.index]}%`;
+                                    return;
                                 },
 
                             }
@@ -60,6 +60,7 @@ const AudienceType = ({ audienceInfo }) => {
                             display: true,
                             position: 'left',
                             labels: {
+                                
                                 fontColor: 'white',
                                 fontSize: 18,
 
