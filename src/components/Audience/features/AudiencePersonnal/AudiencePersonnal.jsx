@@ -37,7 +37,6 @@ const AudiencePersonnal = ({ audiencePersonnal }) => {
     const audienceRaceTitle = Object.keys(audienceRace)
     const audienceRaceValues = Object.values(audienceRace);
 
-
     const ethnicityData = {
 
         labels: audienceRaceTitle.reverse(),
